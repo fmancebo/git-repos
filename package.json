@@ -12,7 +12,7 @@
     "mongoose": "^8.5.2"
   },
   "scripts": {
-    "start": "node ./src/server.js",
+    "start": "sucrase-node ./src/server.js",
     "dev": "nodemon ./src/server.js"
   },
   "devDependencies": {
