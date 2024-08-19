@@ -1,33 +1,15 @@
 version: "3.1"
 services:
-  mongo:
-    image: mongo
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=secret
-      - MONGO_INITDB_DATABASE=develop
-    ports:
-      - 27017:27017
-    volumes:
-      - mongo-data:/data/db
-    networks:
-      - backend
-
   adminmongo:
     image: mrvautin/adminmongo
     ports:
       - 8001:1234
     environment:
       - HOST=0.0.0.0
-      - DB=mongodb://root:secret@mongo:27017/develop?authSource=admin
-    depends_on:
-      - mongo
+      - DB=mongodb+srv://fmancebo:Deposito.61@cluster0.r7wun.mongodb.net/develop?retryWrites=true&w=majority
     networks:
       - backend
 
 networks:
   backend:
     driver: bridge
-
-volumes:
-  mongo-data:
