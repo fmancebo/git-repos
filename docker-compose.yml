@@ -6,7 +6,7 @@ services:
       - 8001:1234
     environment:
       - HOST=0.0.0.0
-      - DB=mongodb+srv://fmancebo:Deposito.61@cluster0.r7wun.mongodb.net/develop?retryWrites=true&w=majority
+      - DB=${MONGODB_URI_DOCKER}
     networks:
       - backend
 
